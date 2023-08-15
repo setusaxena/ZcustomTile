@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:form="sap.ui.layout.form">
+	<Dialog id="selFioriTiles" class="sapUiContentPadding" title="Title goes here" resizable="false" draggable="true" stretch="false">
+		<html:style>
+			#demotile--selFioriTiles-header { background-color: cyan; }
+			#demotile--selFioriTiles-footer { background-color: cyan; }
+			#demotile--selFioriTiles-title { color: black; }
+			#demotile--closePopup-BDI-content { color: black; }
+		</html:style>
+		<SearchField liveChange=".onSearch" width="100%"/>
+		<List id="idListOfApps" visible="true" items="{ZTILES>/ztilesSet}" selectionChange=".onSelectionChange" mode="SingleSelectMaster"
+			includeItemInSelection="true">
+			<infoToolbar>
+				<OverflowToolbar visible="false" id="idInfoToolbar">
+					<Label id="idFilterLabel" text=""/>
+				</OverflowToolbar>
+			</infoToolbar>
+			<items>
+				<StandardListItem title="{ZTILES>TitleEn}" description="{ZTILES>SubtitleEn}"
+					icon="{ path: 'ZTILES>Imagepath', formatter: '.formatter.imageToURI' }" iconDensityAware="false"/>
+			</items>
+			<!--<StandardListItem title="{ZTILES>TitleEn}" description="{ZTILES>TitleEn}" icon="{ZTILES>TitleEn}" iconDensityAware="false" iconInset="false"/>-->
+		</List>
+		<!--<VBox height="600px">-->
+		<!--	<Page showHeader="false">-->
+		<!--		<subHeader>-->
+		<!--			<OverflowToolbar>-->
+		<!--				<SearchField liveChange=".onSearch" width="100%"/>-->
+		<!--			</OverflowToolbar>-->
+		<!--		</subHeader>-->
+		<!--		<content>-->
+		<!--			<Button text="btnPopUp"></Button>-->
+		<!--		</content>-->
+		<!--	</Page>-->
+		<!--</VBox>-->
+		<buttons>
+			<Button text="{i18n>Cancel}" id="closePopup" type="Default" press="onPopUpClose"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
