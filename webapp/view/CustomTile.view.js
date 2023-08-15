@@ -27,6 +27,9 @@ sap.ui.define([
 		},
 
 		_addCSSFile: function(url) {
+			if (url === "") {
+				return;
+			}
 			return new Promise((resolve, reject) => {
 				let link = document.createElement('link');
 				link.type = 'text/css';
@@ -96,6 +99,10 @@ sap.ui.define([
 			});
 		},
 
+
+		onBeforeRendering : function(){
+			debugger;
+		},
 		/*
 		We should change the color of the text in the footer ("info") to be as received in the tile data in the property (infostate).
 		We used to have this functionality when we used the BaseTile. (we added a class which change the text color).

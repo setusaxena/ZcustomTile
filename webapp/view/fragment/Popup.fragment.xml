@@ -6,6 +6,10 @@
 			#demotile--selFioriTiles-footer { background-color: cyan; }
 			#demotile--selFioriTiles-title { color: black; }
 			#demotile--closePopup-BDI-content { color: black; }
+			#demotileESS--selFioriTiles-header { background-color: red; }
+			#demotileESS--selFioriTiles-footer { background-color: red; }
+			#demotileESS--selFioriTiles-title { color: white; }
+			#demotileESS--closePopup-BDI-content { color: white; }
 		</html:style>
 		<SearchField liveChange=".onSearch" width="100%"/>
 		<List id="idListOfApps" visible="true" items="{ZTILES>/ztilesSet}" selectionChange=".onSelectionChange" mode="SingleSelectMaster"

@@ -398,16 +398,17 @@ sap.ui.define([
 				var sServiceUrl = "/sap/opu/odata/sap/ZTILESINTERFACE_SRV/";
 				var oModelTile = new sap.ui.model.odata.v2.ODataModel(sServiceUrl);
 
-				
 				debugger;
 
 				sap.ui.getCore().setModel(oModelTile, "ZTILES");
-				var oFilter = new sap.ui.model.Filter("Groupid", sap.ui.model.FilterOperator.EQ, 2);
+				//service_refresh_interval used as group id
+				var oFilter = new sap.ui.model.Filter("Groupid", sap.ui.model.FilterOperator.EQ, oConfig.service_refresh_interval);
+				//set to 1 as filtering from backend doesnt work on tihs PoC purpose only
 				var oFilter2 = new sap.ui.model.Filter("Sequence", sap.ui.model.FilterOperator.EQ, 1);
-				//var oFilter3 = new sap.ui.model.Filter("ParentSemObj", sap.ui.model.FilterOperator.EQ, oConfig.navigation_semantic_object);
-				var oFilter3 = new sap.ui.model.Filter("ParentSemObj", sap.ui.model.FilterOperator.EQ, "MSS");
-				//var oFilter4 = new sap.ui.model.Filter("ParentAction", sap.ui.model.FilterOperator.EQ, oConfig.navigation_semantic_action);
-				var oFilter4 = new sap.ui.model.Filter("ParentAction", sap.ui.model.FilterOperator.EQ, "TEAMINFO");
+				var oFilter3 = new sap.ui.model.Filter("ParentSemObj", sap.ui.model.FilterOperator.EQ, oConfig.navigation_semantic_object);
+				//var oFilter3 = new sap.ui.model.Filter("ParentSemObj", sap.ui.model.FilterOperator.EQ, "MSS");
+				var oFilter4 = new sap.ui.model.Filter("ParentAction", sap.ui.model.FilterOperator.EQ, oConfig.navigation_semantic_action);
+				//var oFilter4 = new sap.ui.model.Filter("ParentAction", sap.ui.model.FilterOperator.EQ, "TEAMINFO");
 				var oFilter5 = new sap.ui.model.Filter("Langu", sap.ui.model.FilterOperator.EQ, langu);
 				//Fetch the list and bind the filters for showing the menu
 				var oList = sap.ui.getCore().byId(oConfig.navigation_semantic_action + '--' + 'idListOfApps');
@@ -430,7 +431,7 @@ sap.ui.define([
 			var oConfig = this.getView().getModel().getProperty("/config");
 			var oList = sap.ui.getCore().byId(oConfig.navigation_semantic_action + '--' + 'idListOfApps');
 			var oBinding = oList.getBinding("items");
-			oBinding.filter(aFilters,"Application");
+			oBinding.filter(aFilters, "Application");
 		},
 
 		onPopUpClose: function() {
