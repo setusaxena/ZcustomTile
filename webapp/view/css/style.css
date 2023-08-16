@@ -1,6 +1,10 @@
 /* Enter your custom styles here */
-.brownie {
+.MSS {
    background-color: cyan !important;
+}
+
+.ESS {
+   background-color: red !important;
 }
 
 #demotile--selFioriTiles-header {

@@ -83,6 +83,7 @@ sap.ui.define([
 		},
 
 		onInit: function() {
+
 			var oView = this.getView(),
 				oViewData = oView.getViewData(),
 				oTileApi = oViewData.chip,
@@ -92,7 +93,12 @@ sap.ui.define([
 				aKeywords,
 				that = this,
 				sNavigationTargetUrlInit = oConfig.navigation_target_url,
+				tileCSSIdentifier = oConfig.navigation_semantic_object,
 				sSystem;
+
+			debugger;
+			//Adding CSS to the tile via navigation_semantic_object, which is defined in style.css
+			this._addCSStoTile(oView,tileCSSIdentifier);
 
 			this.sConfigNavigationTargetUrlOld = oConfig.navigation_target_url;
 			jQuery.sap.log.setLevel(2, "sap.ushell.components.tiles.applauncherdynamic.DynamicTile");
@@ -303,6 +309,17 @@ sap.ui.define([
 				// remove the flag
 				this.bIsAbortRequestFlow = undefined;
 			}
+		},
+
+		_addCSStoTile: function(oView,cssClass) {
+			if (oView && oView.getContent && oView.getContent()[0] && oView.getContent()[0].getMetadata && oView.getContent()[0].getMetadata()._sClassName &&
+				(oView.getContent()[0].getMetadata()._sClassName === "sap.m.GenericTile")){
+					//only if the content of the via is a tile
+					var oTile = oView.getContent()[0];
+					if(oTile){
+						oTile.addStyleClass(cssClass);
+					}
+				}
 		},
 
 		// destroy handler stops requests
