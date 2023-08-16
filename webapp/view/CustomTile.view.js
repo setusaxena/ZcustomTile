@@ -21,14 +21,17 @@ sap.ui.define([
 
 		createContent: function() {
 			this.setHeight("100%");
-			this.setWidth("100%");
 			var tileControl = this.getTileControl();
 			return tileControl;
 		},
 
 		_addCSSFile: function(url) {
+			debugger;
 			if (url === "") {
 				return;
+			}
+			else{
+				url =  jQuery.sap.getModulePath("view.css.", "/" + url);
 			}
 			return new Promise((resolve, reject) => {
 				let link = document.createElement('link');
@@ -49,14 +52,10 @@ sap.ui.define([
 			var oController = this.getController();
 
 			return new GenericTile({
-				mode: "{/mode}",
+				frameType: "TwoByOne",
 				header: "{/data/display_title_text}",
-				subheader: "{/data/display_subtitle_text}",
-				size: "Auto",
-				sizeBehavior: "{/sizeBehavior}",
-				wrappingType: "{/wrappingType}",
 				tileContent: [new TileContent({
-					size: "Auto",
+					frameType: "TwoByOne",
 					footer: "{/data/display_info_text}",
 					footerColor: {
 						path: "/data/display_info_state",
@@ -96,7 +95,7 @@ sap.ui.define([
 					})]
 				})],
 				press: [oController.onPress, oController]
-			});
+			}).addStyleClass("brownie");
 		},
 
 
@@ -138,7 +137,7 @@ sap.ui.define([
 				}
 			}
 			debugger;
-			this._addCSSFile();
+			this._addCSSFile("style.css");
 		},
 
 		getMode: function() {

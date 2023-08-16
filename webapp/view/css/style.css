@@ -1,5 +1,36 @@
 /* Enter your custom styles here */
-css-test {
-  color: red;
-  text-align: center;
+.brownie {
+   background-color: cyan !important;
+}
+
+#demotile--selFioriTiles-header {
+    background-color: cyan;
+}
+
+#demotile--selFioriTiles-footer {
+    background-color: cyan;
+}
+
+#demotile--selFioriTiles-title {
+    color: black;
+}
+
+#demotile--closePopup-BDI-content {
+    color: black;
+}
+
+#demotileESS--selFioriTiles-header {
+    background-color: red;
+}
+
+#demotileESS--selFioriTiles-footer {
+    background-color: red;
+}
+
+#demotileESS--selFioriTiles-title {
+    color: white;
+}
+
+#demotileESS--closePopup-BDI-content {
+    color: white;
 }
