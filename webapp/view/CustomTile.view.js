@@ -26,13 +26,22 @@ sap.ui.define([
 		},
 
 		_addCSSFile: function(url) {
+			//TODO we need a better way of attaching the CSS, this is just a temporary workaround.
 			debugger;
 			if (url === "") {
 				return;
+			} else {
+				url = jQuery.sap.getModulePath("view.css.", "/" + url);
 			}
-			else{
-				url =  jQuery.sap.getModulePath("view.css.", "/" + url);
+			if (!window.cssInsertedArray) {
+				window.cssInsertedArray = [];
+			} else {
+				if (window.cssInsertedArray.indexOf(url) > -1) {
+					return; //No action, CSS already exists
+				}
 			}
+			var addedCSSURI = url;
+
 			return new Promise((resolve, reject) => {
 				let link = document.createElement('link');
 				link.type = 'text/css';
@@ -45,6 +54,7 @@ sap.ui.define([
 
 				let headScript = document.querySelector('script');
 				headScript.parentNode.insertBefore(link, headScript);
+				window.cssInsertedArray.push(url);
 			});
 		},
 
@@ -95,11 +105,11 @@ sap.ui.define([
 					})]
 				})],
 				press: [oController.onPress, oController]
-			}).addStyleClass("brownie");
+			});
+			//}).addStyleClass("brownie");
 		},
 
-
-		onBeforeRendering : function(){
+		onBeforeRendering: function() {
 			debugger;
 		},
 		/*

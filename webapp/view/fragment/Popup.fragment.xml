@@ -1,16 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:form="sap.ui.layout.form">
 	<Dialog id="selFioriTiles" class="sapUiContentPadding" title="Title goes here" resizable="false" draggable="true" stretch="false">
-		<html:style>
-			#demotile--selFioriTiles-header { background-color: cyan; }
-			#demotile--selFioriTiles-footer { background-color: cyan; }
-			#demotile--selFioriTiles-title { color: black; }
-			#demotile--closePopup-BDI-content { color: black; }
-			#demotileESS--selFioriTiles-header { background-color: red; }
-			#demotileESS--selFioriTiles-footer { background-color: red; }
-			#demotileESS--selFioriTiles-title { color: white; }
-			#demotileESS--closePopup-BDI-content { color: white; }
-		</html:style>
 		<SearchField liveChange=".onSearch" width="100%"/>
 		<List id="idListOfApps" visible="true" items="{ZTILES>/ztilesSet}" selectionChange=".onSelectionChange" mode="SingleSelectMaster"
 			includeItemInSelection="true">
