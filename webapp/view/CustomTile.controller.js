@@ -312,12 +312,18 @@ sap.ui.define([
 		},
 
 		_addCSStoTile: function(oView,cssClass) {
+			//tile view corner radius
+			if(oView && oView.addStyleClass){
+				oView.addStyleClass("TileRoundedCorner");
+			}
+			//tile control colour CSS
 			if (oView && oView.getContent && oView.getContent()[0] && oView.getContent()[0].getMetadata && oView.getContent()[0].getMetadata()._sClassName &&
 				(oView.getContent()[0].getMetadata()._sClassName === "sap.m.GenericTile")){
 					//only if the content of the via is a tile
 					var oTile = oView.getContent()[0];
-					if(oTile){
+					if(oTile && oTile.addStyleClass){
 						oTile.addStyleClass(cssClass);
+						oTile.addStyleClass("TileRoundedCorner");
 					}
 				}
 		},

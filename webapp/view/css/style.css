@@ -1,10 +1,28 @@
 /* Enter your custom styles here */
+
 .MSS {
-   background-color: cyan !important;
+    background-color: cyan !important;
 }
 
 .ESS {
-   background-color: red !important;
+    background-color: red !important;
+}
+
+.sapUshellLong {
+    border-radius: 20px !important;
+}
+
+.TileRoundedCorner {
+    border-radius: 20px !important;
+}
+
+.card {
+    background-color: #fff;
+    background: linear-gradient(#f8f8f8, #fff);
+    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
 }
 
 #demotile--selFioriTiles-header {

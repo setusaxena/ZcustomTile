@@ -1,11 +1,13 @@
 sap.ui.define([
 	"sap/m/GenericTile",
 	"sap/m/TileContent",
+	"sap/m/ImageContent",
 	"sap/m/library",
 	"sap/m/NumericContent"
 ], function(
 	GenericTile,
 	TileContent,
+	ImageContent,
 	mobileLibrary,
 	NumericContent
 ) {
@@ -27,7 +29,6 @@ sap.ui.define([
 
 		_addCSSFile: function(url) {
 			//TODO we need a better way of attaching the CSS, this is just a temporary workaround.
-			debugger;
 			if (url === "") {
 				return;
 			} else {
@@ -64,6 +65,7 @@ sap.ui.define([
 			return new GenericTile({
 				frameType: "TwoByOne",
 				header: "{/data/display_title_text}",
+				subheader: "{/data/display_subtitle_text}",
 				tileContent: [new TileContent({
 					frameType: "TwoByOne",
 					footer: "{/data/display_info_text}",
@@ -86,31 +88,18 @@ sap.ui.define([
 					},
 					unit: "{/data/display_number_unit}",
 					//We'll utilize NumericContent for the "Dynamic" content.
-					content: [new NumericContent({
-						scale: "{/data/display_number_factor}",
-						value: "{/data/display_number_value}",
-						truncateValueTo: 5, //Otherwise, The default value is 4.
-						indicator: "{/data/display_state_arrow}",
-						valueColor: {
-							path: "/data/display_number_state",
-							formatter: function(sValueColor) {
-								if (!ValueColor[sValueColor]) {
-									sValueColor = ValueColor.Neutral;
-								}
-								return sValueColor;
+					content: [new ImageContent({
+						src: {
+							path: "/config/service_url",
+							formatter: function(imgSrc) {
+								debugger;
+								return jQuery.sap.getModulePath("view.images.", "/" + imgSrc)
 							}
-						},
-						icon: "{/data/display_icon_url}",
-						width: "100%"
+						}
 					})]
 				})],
 				press: [oController.onPress, oController]
 			});
-			//}).addStyleClass("brownie");
-		},
-
-		onBeforeRendering: function() {
-			debugger;
 		},
 		/*
 		We should change the color of the text in the footer ("info") to be as received in the tile data in the property (infostate).
@@ -146,7 +135,6 @@ sap.ui.define([
 						return;
 				}
 			}
-			debugger;
 			this._addCSSFile("style.css");
 		},
 
