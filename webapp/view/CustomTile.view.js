@@ -68,7 +68,7 @@ sap.ui.define([
 				subheader: "{/data/display_subtitle_text}",
 				tileContent: [new TileContent({
 					frameType: "TwoByOne",
-					footer: "{/data/display_info_text}",
+					footer: "",
 					footerColor: {
 						path: "/data/display_info_state",
 						formatter: function(sFooterColor) {
@@ -92,7 +92,6 @@ sap.ui.define([
 						src: {
 							path: "/config/service_url",
 							formatter: function(imgSrc) {
-								debugger;
 								return jQuery.sap.getModulePath("view.images.", "/" + imgSrc)
 							}
 						}

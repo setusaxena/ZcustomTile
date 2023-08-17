@@ -1,11 +1,11 @@
 /* Enter your custom styles here */
 
 .MSS {
-    background-color: #800000 !important;
+    background-color: #f0ed60 !important;
 }
 
 .ESS {
-    background-color: red !important;
+    background-color: #3bebc4 !important;
 }
 
 /*
@@ -30,11 +30,11 @@ span[id^="__tile"] {
 }
 
 #demotile--selFioriTiles-header {
-    background-color: #800000;
+    background-color: #f0ed60;
 }
 
 #demotile--selFioriTiles-footer {
-    background-color: #800000;
+    background-color: #f0ed60;
 }
 
 #demotile--selFioriTiles-title {
@@ -46,11 +46,11 @@ span[id^="__tile"] {
 }
 
 #demotileESS--selFioriTiles-header {
-    background-color: red;
+    background-color: #3bebc4;
 }
 
 #demotileESS--selFioriTiles-footer {
-    background-color: red;
+    background-color: #3bebc4;
 }
 
 #demotileESS--selFioriTiles-title {

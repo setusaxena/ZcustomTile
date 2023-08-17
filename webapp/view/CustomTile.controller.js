@@ -96,9 +96,8 @@ sap.ui.define([
 				tileCSSIdentifier = oConfig.navigation_semantic_object,
 				sSystem;
 
-			debugger;
 			//Adding CSS to the tile via navigation_semantic_object, which is defined in style.css
-			this._addCSStoTile(oView,tileCSSIdentifier);
+			this._addCSStoTile(oView, tileCSSIdentifier);
 
 			this.sConfigNavigationTargetUrlOld = oConfig.navigation_target_url;
 			jQuery.sap.log.setLevel(2, "sap.ushell.components.tiles.applauncherdynamic.DynamicTile");
@@ -311,22 +310,22 @@ sap.ui.define([
 			}
 		},
 
-		_addCSStoTile: function(oView,cssClass) {
+		_addCSStoTile: function(oView, cssClass) {
 			//tile view corner radius
-			if(oView && oView.addStyleClass){
+			if (oView && oView.addStyleClass) {
 				oView.addStyleClass("TileRoundedCorner");
 			}
 			//tile control colour CSS
 			if (oView && oView.getContent && oView.getContent()[0] && oView.getContent()[0].getMetadata && oView.getContent()[0].getMetadata()._sClassName &&
-				(oView.getContent()[0].getMetadata()._sClassName === "sap.m.GenericTile")){
-					//only if the content of the via is a tile
-					var oTile = oView.getContent()[0];
-					if(oTile && oTile.addStyleClass){
-						oTile.addStyleClass(cssClass);
-						oTile.addStyleClass("TileRoundedCorner");
-						oTile.addStyleClass("TileCardEffect");
-					}
+				(oView.getContent()[0].getMetadata()._sClassName === "sap.m.GenericTile")) {
+				//only if the content of the via is a tile
+				var oTile = oView.getContent()[0];
+				if (oTile && oTile.addStyleClass) {
+					oTile.addStyleClass(cssClass);
+					oTile.addStyleClass("TileRoundedCorner");
+					oTile.addStyleClass("TileCardEffect");
 				}
+			}
 		},
 
 		// destroy handler stops requests
@@ -338,7 +337,6 @@ sap.ui.define([
 
 		// trigger to show the configuration UI if the tile is pressed in Admin mode
 		onPress: function(oEvent) {
-			debugger;
 			var oView = this.getView(),
 				oViewData = oView.getViewData(),
 				oModel = oView.getModel(),
@@ -387,10 +385,6 @@ sap.ui.define([
 			}
 		},
 
-		onAfterRendering: function(oEvent) {
-			debugger;
-		},
-
 		setPopUp: function() {
 			var that = this;
 			var oConfig = this.getView().getModel().getProperty("/config");
@@ -422,8 +416,6 @@ sap.ui.define([
 				var sServiceUrl = "/sap/opu/odata/sap/ZTILESINTERFACE_SRV/";
 				var oModelTile = new sap.ui.model.odata.v2.ODataModel(sServiceUrl);
 
-				debugger;
-
 				sap.ui.getCore().setModel(oModelTile, "ZTILES");
 				//service_refresh_interval used as group id
 				var oFilter = new sap.ui.model.Filter("Groupid", sap.ui.model.FilterOperator.EQ, oConfig.service_refresh_interval);
@@ -442,20 +434,34 @@ sap.ui.define([
 		},
 
 		onSearch: function(oEvent) {
-			debugger;
-			// add filter for search
-			var aFilters = [];
-			var sQuery = oEvent.getSource().getValue();
-			if (sQuery && sQuery.length > 0) {
-				var filter = new Filter("TitleEn", FilterOperator.Contains, sQuery);
-				aFilters.push(filter);
-			}
-
-			// update list binding
 			var oConfig = this.getView().getModel().getProperty("/config");
 			var oList = sap.ui.getCore().byId(oConfig.navigation_semantic_action + '--' + 'idListOfApps');
 			var oBinding = oList.getBinding("items");
-			oBinding.filter(aFilters, "Application");
+			var currentFilters = [];
+			if (oBinding && oBinding.aFilters) {
+				currentFilters = oBinding.aFilters;
+			}
+
+			debugger;
+			// add filter for search
+			var newFilters = [];
+			//read  all the filters that do not sPath for TitleEn 
+			currentFilters.forEach(function(afilter) {
+				var filterSPath = "";
+				if (afilter.sPath) filterSPath = afilter.sPath;
+				if (filterSPath !== "TitleEn") {
+					newFilters.push(afilter);
+				}
+			});
+
+			//lets validate the title search query now
+			var sQuery = oEvent.getSource().getValue();
+			if (sQuery && sQuery.length > 0) {
+				var filter = new Filter("TitleEn", FilterOperator.EQ, sQuery);
+				newFilters.push(filter);
+			}
+			// update list binding
+			oBinding.filter(newFilters);
 		},
 
 		onPopUpClose: function() {
