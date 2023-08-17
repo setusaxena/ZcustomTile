@@ -2,15 +2,14 @@
 	xmlns:form="sap.ui.layout.form">
 	<Dialog id="selFioriTiles" class="sapUiContentPadding" title="Title goes here" resizable="false" draggable="true" stretch="false">
 		<SearchField liveChange=".onSearch" width="100%"/>
-		<List id="idListOfApps" visible="true" items="{ZTILES>/ztilesSet}" selectionChange=".onSelectionChange" mode="SingleSelectMaster"
-			includeItemInSelection="true">
+		<List id="idListOfApps" visible="true" items="{ZTILES>/ztilesSet}" includeItemInSelection="true">
 			<infoToolbar>
 				<OverflowToolbar visible="false" id="idInfoToolbar">
 					<Label id="idFilterLabel" text=""/>
 				</OverflowToolbar>
 			</infoToolbar>
 			<items>
-				<StandardListItem title="{ZTILES>TitleEn}" description="{ZTILES>SubtitleEn}"
+				<StandardListItem title="{ZTILES>TitleEn}" description="{ZTILES>SubtitleEn}" press=".onApplicationItemPressed" type="Active"
 					icon="{ path: 'ZTILES>Imagepath', formatter: '.formatter.imageToURI' }" iconDensityAware="false"/>
 			</items>
 			<!--<StandardListItem title="{ZTILES>TitleEn}" description="{ZTILES>TitleEn}" icon="{ZTILES>TitleEn}" iconDensityAware="false" iconInset="false"/>-->

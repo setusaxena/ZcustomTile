@@ -385,6 +385,10 @@ sap.ui.define([
 			}
 		},
 
+		onApplicationItemPressed : function(oEvent){
+			debugger;
+		},
+		
 		setPopUp: function() {
 			var that = this;
 			var oConfig = this.getView().getModel().getProperty("/config");
