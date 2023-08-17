@@ -324,6 +324,7 @@ sap.ui.define([
 					if(oTile && oTile.addStyleClass){
 						oTile.addStyleClass(cssClass);
 						oTile.addStyleClass("TileRoundedCorner");
+						oTile.addStyleClass("TileCardEffect");
 					}
 				}
 		},

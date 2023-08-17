@@ -1,12 +1,18 @@
 /* Enter your custom styles here */
 
 .MSS {
-    background-color: cyan !important;
+    background-color: #800000 !important;
 }
 
 .ESS {
     background-color: red !important;
 }
+
+/*
+span[id^="__tile"] {
+	color : white !important;
+}
+*/
 
 .sapUshellLong {
     border-radius: 20px !important;
@@ -16,29 +22,27 @@
     border-radius: 20px !important;
 }
 
-.card {
-    background-color: #fff;
-    background: linear-gradient(#f8f8f8, #fff);
-    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
-    border-radius: 6px;
-    overflow: hidden;
-    position: relative;
+.TileCardEffect {
+    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4) !important;;
+    border-radius: 6px !important;;
+    position: relative !important;;    overflow: hidden !important;;
+
 }
 
 #demotile--selFioriTiles-header {
-    background-color: cyan;
+    background-color: #800000;
 }
 
 #demotile--selFioriTiles-footer {
-    background-color: cyan;
+    background-color: #800000;
 }
 
 #demotile--selFioriTiles-title {
-    color: black;
+    color: white;
 }
 
 #demotile--closePopup-BDI-content {
-    color: black;
+    color: white;
 }
 
 #demotileESS--selFioriTiles-header {
