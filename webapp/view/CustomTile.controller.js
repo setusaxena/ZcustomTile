@@ -385,10 +385,21 @@ sap.ui.define([
 			}
 		},
 
-		onApplicationItemPressed : function(oEvent){
-			debugger;
+		onApplicationItemPressed: function(oEvent) {
+			var pressedItemSPath = oEvent.getSource().getBindingContext("ZTILES").getPath();
+			var oModel = oEvent.getSource().getModel("ZTILES");
+			if (oModel && oModel.getObject) {
+				var oTileObject = oModel.getObject(pressedItemSPath);
+				if (oTileObject.SemObj && oTileObject.Action) {
+					this._navigateToIntent(oTileObject.SemObj, oTileObject.Action);
+				}
+			}
 		},
-		
+
+		_navigateToIntent: function(semObj, action) {
+
+		},
+
 		setPopUp: function() {
 			var that = this;
 			var oConfig = this.getView().getModel().getProperty("/config");
