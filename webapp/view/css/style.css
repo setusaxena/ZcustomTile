@@ -1,13 +1,50 @@
 /* Enter your custom styles here */
 
 .MSS {
-    background-color: #f0ed60 !important;
+    background-color: #8f1010 !important;
+}
+
+#demotile--selFioriTiles-header {
+    background-color: #8f1010;
+}
+
+#demotile--selFioriTiles-footer {
+    background-color: #8f1010;
 }
 
 .ESS {
-    background-color: #3bebc4 !important;
+    background-color: #0f403f !important;
 }
 
+#demotileESS--selFioriTiles-header {
+    background-color: #0f403f;
+}
+
+#demotileESS--selFioriTiles-footer {
+    background-color: #0f403f;
+}
+
+.WOT {
+    background-color: #204030 !important;
+}
+
+#demotileWOT--selFioriTiles-header {
+    background-color: #204030;
+}
+
+#demotileWOT--selFioriTiles-footer {
+    background-color: #204030;
+}
+
+span[id^="__tile"] {
+	color : white !important;
+}
+
+/*
+span[id^="__tile"] {
+	color : white !important;
+}
+*/
 /*
 span[id^="__tile"] {
 	color : white !important;
@@ -23,18 +60,14 @@ span[id^="__tile"] {
 }
 
 .TileCardEffect {
-    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4) !important;;
-    border-radius: 6px !important;;
-    position: relative !important;;    overflow: hidden !important;;
-
-}
-
-#demotile--selFioriTiles-header {
-    background-color: #f0ed60;
-}
-
-#demotile--selFioriTiles-footer {
-    background-color: #f0ed60;
+    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 2.0) !important;
+    ;
+    border-radius: 6px !important;
+    ;
+    position: relative !important;
+    ;
+    overflow: hidden !important;
+    ;
 }
 
 #demotile--selFioriTiles-title {
@@ -43,14 +76,6 @@ span[id^="__tile"] {
 
 #demotile--closePopup-BDI-content {
     color: white;
-}
-
-#demotileESS--selFioriTiles-header {
-    background-color: #3bebc4;
-}
-
-#demotileESS--selFioriTiles-footer {
-    background-color: #3bebc4;
 }
 
 #demotileESS--selFioriTiles-title {

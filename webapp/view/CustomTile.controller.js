@@ -397,7 +397,8 @@ sap.ui.define([
 		},
 
 		_navigateToIntent: function(semObj, action) {
-
+			//TODO not the right way of navigation, we need a full tile config
+			hasher.setHash("#" + semObj + "-" + action);
 		},
 
 		setPopUp: function() {
