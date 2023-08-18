@@ -391,14 +391,25 @@ sap.ui.define([
 			if (oModel && oModel.getObject) {
 				var oTileObject = oModel.getObject(pressedItemSPath);
 				if (oTileObject.SemObj && oTileObject.Action) {
-					this._navigateToIntent(oTileObject.SemObj, oTileObject.Action);
+					if (oTileObject.Zparameters && oTileObject.Zparameters !== "") {
+						this._navigateToIntent(oTileObject.SemObj, oTileObject.Action, oTileObject.Zparameters);
+					} else {
+
+						this._navigateToIntent(oTileObject.SemObj, oTileObject.Action, "");
+					}
+
 				}
 			}
 		},
 
-		_navigateToIntent: function(semObj, action) {
+		_navigateToIntent: function(semObj, action, parameters) {
 			//TODO not the right way of navigation, we need a full tile config
-			hasher.setHash("#" + semObj + "-" + action);
+			if (parameters && parameters !== "") {
+				hasher.setHash("#" + semObj + "-" + action + "?" + parameters);
+			} else {
+				hasher.setHash("#" + semObj + "-" + action);
+			}
+
 		},
 
 		setPopUp: function() {

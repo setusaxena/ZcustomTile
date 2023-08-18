@@ -12,6 +12,16 @@
     background-color: #8f1010;
 }
 
+#demotile--selFioriTiles-title {
+    color: white;
+}
+
+#demotile--closePopup-BDI-content {
+    color: white;
+}
+
+
+
 .ESS {
     background-color: #0f403f !important;
 }
@@ -24,6 +34,16 @@
     background-color: #0f403f;
 }
 
+#demotileESS--selFioriTiles-title {
+    color: white;
+}
+
+#demotileESS--closePopup-BDI-content {
+    color: white;
+}
+
+
+
 .WOT {
     background-color: #204030 !important;
 }
@@ -34,6 +54,14 @@
 
 #demotileWOT--selFioriTiles-footer {
     background-color: #204030;
+}
+
+#demotileWOT--selFioriTiles-title {
+    color: white;
+}
+
+#demotileWOT--closePopup-BDI-content {
+    color: white;
 }
 
 span[id^="__tile"] {
@@ -68,20 +96,4 @@ span[id^="__tile"] {
     ;
     overflow: hidden !important;
     ;
-}
-
-#demotile--selFioriTiles-title {
-    color: white;
-}
-
-#demotile--closePopup-BDI-content {
-    color: white;
-}
-
-#demotileESS--selFioriTiles-title {
-    color: white;
-}
-
-#demotileESS--closePopup-BDI-content {
-    color: white;
 }
