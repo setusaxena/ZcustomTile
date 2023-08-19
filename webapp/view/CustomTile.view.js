@@ -3,13 +3,15 @@ sap.ui.define([
 	"sap/m/TileContent",
 	"sap/m/ImageContent",
 	"sap/m/library",
-	"sap/m/NumericContent"
+	"sap/m/NumericContent",
+	"sap/ui/model/resource/ResourceModel"
 ], function(
 	GenericTile,
 	TileContent,
 	ImageContent,
 	mobileLibrary,
-	NumericContent
+	NumericContent,
+	ResourceModel
 ) {
 	"use strict";
 
@@ -25,6 +27,13 @@ sap.ui.define([
 			this.setHeight("100%");
 			var tileControl = this.getTileControl();
 			return tileControl;
+		},
+		
+		_addi18nModel: function(){
+			var i18nModel = new ResourceModel({
+				bundleName : "view.i18n.i18n"
+			});
+			this.setModel(i18nModel,"i18n"); 
 		},
 
 		_addCSSFile: function(url) {
@@ -135,6 +144,8 @@ sap.ui.define([
 				}
 			}
 			this._addCSSFile("style.css");
+			this._addi18nModel();
+			
 		},
 
 		getMode: function() {
