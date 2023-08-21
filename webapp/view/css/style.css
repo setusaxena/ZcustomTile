@@ -20,8 +20,6 @@
     color: white;
 }
 
-
-
 .ESS {
     background-color: #0f4260 !important;
 }
@@ -41,8 +39,6 @@
 #demotileESS--closePopup-BDI-content {
     color: white;
 }
-
-
 
 .WOT {
     background-color: #129b82 !important;
@@ -64,8 +60,6 @@
     color: white;
 }
 
-
-
 .JAP {
     background-color: #4194b3 !important;
 }
@@ -86,16 +80,22 @@
     color: white;
 }
 
-
 span[id^="__tile"] {
-	color : white !important;
+    color: white !important;
 }
+
+h2[title="CGB Employee V2"] {
+    visibility: hidden !important;
+}
+
 
 /*
 span[id^="__tile"] {
 	color : white !important;
 }
 */
+
+
 /*
 span[id^="__tile"] {
 	color : white !important;
@@ -121,9 +121,7 @@ span[id^="__tile"] {
     ;
 }
 
-
 .TileCardEffect:hover {
-  transform: scale(1.01, 1.01);
-  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
-    -5px -5px 30px 15px rgba(0,0,0,0.22);
+    transform: scale(1.01, 1.01);
+    box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25), -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
 }
