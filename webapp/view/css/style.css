@@ -1,15 +1,15 @@
 /* Enter your custom styles here */
 
 .MSS {
-    background-color: #8f1010 !important;
+    background-color: #89143c !important;
 }
 
 #demotile--selFioriTiles-header {
-    background-color: #8f1010;
+    background-color: #89143c;
 }
 
 #demotile--selFioriTiles-footer {
-    background-color: #8f1010;
+    background-color: #89143c;
 }
 
 #demotile--selFioriTiles-title {
@@ -23,15 +23,15 @@
 
 
 .ESS {
-    background-color: #0f403f !important;
+    background-color: #0f4260 !important;
 }
 
 #demotileESS--selFioriTiles-header {
-    background-color: #0f403f;
+    background-color: #0f4260;
 }
 
 #demotileESS--selFioriTiles-footer {
-    background-color: #0f403f;
+    background-color: #0f4260;
 }
 
 #demotileESS--selFioriTiles-title {
@@ -45,15 +45,15 @@
 
 
 .WOT {
-    background-color: #204030 !important;
+    background-color: #129b82 !important;
 }
 
 #demotileWOT--selFioriTiles-header {
-    background-color: #204030;
+    background-color: #129b82;
 }
 
 #demotileWOT--selFioriTiles-footer {
-    background-color: #204030;
+    background-color: #129b82;
 }
 
 #demotileWOT--selFioriTiles-title {
@@ -63,6 +63,29 @@
 #demotileWOT--closePopup-BDI-content {
     color: white;
 }
+
+
+
+.JAP {
+    background-color: #4194b3 !important;
+}
+
+#demotileJAP--selFioriTiles-header {
+    background-color: #4194b3;
+}
+
+#demotileJAP--selFioriTiles-footer {
+    background-color: #4194b3;
+}
+
+#demotileJAP--selFioriTiles-title {
+    color: white;
+}
+
+#demotileJAP--closePopup-BDI-content {
+    color: white;
+}
+
 
 span[id^="__tile"] {
 	color : white !important;
@@ -96,4 +119,11 @@ span[id^="__tile"] {
     ;
     overflow: hidden !important;
     ;
+}
+
+
+.TileCardEffect:hover {
+  transform: scale(1.01, 1.01);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
 }
